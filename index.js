@@ -22,10 +22,12 @@ function extractGithubUsername(url) {
   return username;
 }
 
-const githubRepos = [
-  'https://github.com/dimka3553/harbour_todo_exercise.git',
-  'https://github.com/MarcoMeijer/harbour_todo_exercise.git',
-];
+const githubRepos = [];
+
+if (githubRepos.length === 0) {
+  shell.echo('Sorry, you need to add the repos to the githubRepos array');
+  shell.exit(1);
+}
 
 shell.mkdir(reposPath);
 
